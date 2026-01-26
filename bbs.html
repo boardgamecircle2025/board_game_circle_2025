@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>BBS</title>
+
+<script src="password.js"></script>
+<script src="auth.js"></script>
+
+<script>
+function loadPosts(){
+ let posts=localStorage.getItem("bbs_posts");
+ posts=posts?JSON.parse(posts):[];
+ let h="";
+ posts.forEach(p=>{
+   h+="<b>"+p.name+"</b>："+p.comment+"<br>";
+ });
+ document.getElementById("posts").innerHTML=h;
+}
+
+function savePost(){
+ let name=nameInput.value;
+ let comment=commentInput.value;
+ if(!name||!comment)return;
+ let posts=localStorage.getItem("bbs_posts");
+ posts=posts?JSON.parse(posts):[];
+ posts.unshift({name:name,comment:comment});
+ localStorage.setItem("bbs_posts",JSON.stringify(posts));
+ nameInput.value="";
+ commentInput.value="";
+ loadPosts();
+}
+</script>
+
+</head>
+
+<body background="bg.gif" onload="loadPosts()">
+<center>
+
+<h2>■ 掲示板 ■</h2>
+
+名前:<input id="nameInput"><br>
+<textarea id="commentInput" rows="5" cols="40"></textarea><br>
+<input type="button" value="書き込む" onclick="savePost()">
+
+<hr>
+
+<div id="posts"></div>
+
+<br><a href="index.html">戻る</a>
+
+</center>
+</body>
+</html>

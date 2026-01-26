@@ -1,0 +1,1 @@
+const SITE_PASSWORD = "msc_bg_2025";
