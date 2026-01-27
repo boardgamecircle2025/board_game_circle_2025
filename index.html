@@ -22,23 +22,46 @@ body{
   color:white;
   background-repeat:repeat;
   font-family:"MS Gothic","Comic Sans MS",sans-serif;
+  font-size:18px;
+  cursor:crosshair;
 }
 
 .title{
- font-size:36px;
+ font-size:52px;
  font-weight:bold;
  color:#ff00ff;
+ text-shadow:
+  2px 2px 0 red,
+  -2px -2px 0 cyan,
+  2px -2px 0 yellow,
+  -2px 2px 0 lime;
+ letter-spacing:3px;
 }
 
 .box{
- border:3px ridge blue;
- background:white;
- padding:10px;
+ border:5px ridge magenta;
+ background:linear-gradient(
+   180deg,
+   #ffffcc,
+   #ffccff,
+   #ccffff
+ );
+ padding:12px;
  color:black;
+ box-shadow:0 0 10px yellow;
 }
 
-a{color:blue;text-decoration:none;}
-a:hover{color:red;}
+a{
+ color:blue;
+ text-decoration:none;
+ font-weight:bold;
+ font-size:18px;
+}
+
+a:hover{
+ color:red;
+ background:yellow;
+}
 </style>
 
 <script>
@@ -92,7 +115,9 @@ Last Update : 2026/01/26<br>
 
 あなたは <span id="counter">000000</span> 人目のお客様です！
 
-<marquee>「MSCボードゲームサークル」のホームページへようこそ！！</marquee>
+<marquee behavior="alternate" direction="left" scrollamount="8" width="600">
+★ 「MSCボードゲームサークル」のホームページへようこそ！！ ★
+</marquee>
 
 <table width="800" border="1" cellpadding="10">
 <tr>
@@ -143,6 +168,7 @@ Last Update : 2026/01/26<br>
 </body>
 
 </html>
+
 
 
 
