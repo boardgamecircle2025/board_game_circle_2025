@@ -452,10 +452,62 @@ function closeJoin(){
 }
 </script>
 
+  <script>
+const starCanvas = document.createElement("canvas");
+starCanvas.style.position = "fixed";
+starCanvas.style.left = 0;
+starCanvas.style.top = 0;
+starCanvas.style.width = "100%";
+starCanvas.style.height = "100%";
+starCanvas.style.pointerEvents = "none";
+starCanvas.style.zIndex = "10";
+document.body.appendChild(starCanvas);
+
+const ctxStar = starCanvas.getContext("2d");
+
+function resizeStar(){
+  starCanvas.width = window.innerWidth;
+  starCanvas.height = window.innerHeight;
+}
+resizeStar();
+window.addEventListener("resize", resizeStar);
+
+const fallingStars = [];
+
+for(let i=0;i<80;i++){
+  fallingStars.push(createStar());
+}
+
+function createStar(){
+  return{
+    x: Math.random()*starCanvas.width,
+    y: Math.random()*starCanvas.height,
+    size: Math.random()*3+1,
+    speed: Math.random()*2+0.5
+  };
+}
+
+function drawStars(){
+  ctxStar.clearRect(0,0,starCanvas.width,starCanvas.height);
+
+  fallingStars.forEach(s=>{
+    ctxStar.fillStyle="yellow";
+    ctxStar.fillText("★", s.x, s.y);
+
+    s.y += s.speed;
+    if(s.y > starCanvas.height){
+      s.y = -10;
+      s.x = Math.random()*starCanvas.width;
+    }
+  });
+
+  requestAnimation
+
 
 </body>
 
 </html>
+
 
 
 
