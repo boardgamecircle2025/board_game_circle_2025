@@ -318,6 +318,10 @@ document.addEventListener("click", function(e){
 </div>
 
 <style>
+@font-face{
+  font-family: "PachinkoFont";
+  src: url("kssweetheavycalligraphy.ttf") format("truetype");
+}
 
 /* 暗転背景＋揺れ */
 #joinOverlay{
@@ -373,56 +377,12 @@ document.addEventListener("click", function(e){
 }
 
 .line1{
-  font-size:56px;
-  font-weight:900;
-  font-family:
-    Impact,
-    "Arial Black",
-    "MS PGothic",
-    "HGP創英角ゴ",
-    "Meiryo",
-    sans-serif;
-
-  color:white;
-
-  letter-spacing:4px;
-
-  animation: jump 0.6s infinite alternate;
-
-  text-shadow:
-    3px 3px 0 black,
-    0 0 10px yellow,
-    0 0 25px orange,
-    0 0 60px red,
-    0 0 120px gold;
+  font-family: "PachinkoFont", Impact, Arial Black, sans-serif;
 }
 
 .line2{
-  margin-top:30px;
-  font-size:40px;
-  font-weight:900;
-  font-family:
-    Impact,
-    "Arial Black",
-    "MS PGothic",
-    "HGP創英角ゴ",
-    "Meiryo",
-    sans-serif;
-
-  color:yellow;
-
-  letter-spacing:3px;
-
-  animation: jump2 0.8s infinite alternate;
-
-  text-shadow:
-    3px 3px 0 black,
-    0 0 10px white,
-    0 0 25px orange,
-    0 0 60px red,
-    0 0 120px gold;
+  font-family: "PachinkoFont", Impact, Arial Black, sans-serif;
 }
-
 
 /* キラキラ */
 .sparkle{
@@ -477,6 +437,7 @@ function closeJoin(){
 </body>
 
 </html>
+
 
 
 
