@@ -187,7 +187,7 @@ const cal = document.getElementById("calendar");
 const today = new Date();
 const y = today.getFullYear();
 const m = today.getMonth();
-const eventDays = [24,25];
+const eventDays = [0];
 
 const first = new Date(y, m, 1).getDay();
 const last = new Date(y, m+1, 0).getDate();
@@ -378,11 +378,30 @@ document.addEventListener("click", function(e){
 
 .line1{
   font-family: "tamanegi", Impact, Arial Black, sans-serif;
+  font-size: 64px;
+  color: gold;
+  font-weight: bold;
+  text-shadow:
+    0 0 5px red,
+    0 0 10px orange,
+    0 0 20px yellow,
+    2px 2px 0 black;
+  letter-spacing: 4px;
 }
+
 
 .line2{
   font-family: "tamanegi", Impact, Arial Black, sans-serif;
+  font-size: 40px;
+  color: #ff0000;
+  font-weight: bold;
+  text-shadow:
+    0 0 5px yellow,
+    0 0 10px orange,
+    2px 2px 0 black;
+  letter-spacing: 3px;
 }
+
 
 /* キラキラ */
 .sparkle{
@@ -437,6 +456,7 @@ function closeJoin(){
 </body>
 
 </html>
+
 
 
 
